@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>GeoJSON tutorial - Leaflet</title>
+
+	<link rel="stylesheet" href="leaflet.css" />
+	<script src="leaflet.js"></script>
+	<script src="province.geojson" type="text/javascript"></script>
+
+	
+</head>
+<body>
+<div id="map" style="width: 1200px; height: 800px;"></div>
+<script>
+
+	var map = L.map('map').setView([33.992403017832274,  -6.220304879115198], 10);
+
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
+
+	L.geoJSON(mesprovinces).addTo(map);
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
